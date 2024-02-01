@@ -62,33 +62,28 @@ window.addEventListener('click', function(e) {
 // dark mode toggle
 const darkToggle = document.querySelector('#dark-toggle');
 const html = document.querySelector('html');
+const img1 = document.querySelector('#mubtadev-1');
+const img2 = document.querySelector('#mubtadev-2');
 
 darkToggle.addEventListener('click', function(){
     if(darkToggle.checked){
         html.classList.add('dark');
         localStorage.theme = 'dark';
+        img1.classList.add('hidden')
+        img2.classList.remove('hidden')
     }else{
         html.classList.remove('dark');
         localStorage.theme = 'light';
+        img1.classList.remove('hidden')
+        img2.classList.add('hidden')
     }
 });
 
 // pindahkan posisi toggle sesuai moda
 if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     darkToggle.checked = true;
-  } else {
+    img1.classList.add('hidden')
+} else {
     darkToggle.checked = false;
+    img2.classList.add('hidden')
   }
-
-// Card Portfolio
-const btnPort = document.querySelector('#btn-port');
-const elmPort = document.querySelector('#element-port');
-btnPort.addEventListener('click', function(){
-    elmPort.classList.toggle('hidden');
-});
-
-const btnPort2 = document.querySelector('#btn-port-2');
-const elmPort2 = document.querySelector('#element-port-2');
-btnPort2.addEventListener('click', function(){
-    elmPort2.classList.toggle('hidden');
-});
