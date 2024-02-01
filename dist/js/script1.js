@@ -1,3 +1,7 @@
+AOS.init({
+    duration: 800,
+});
+
 // Timer
 function displayTime(){
     let jam = document.querySelector('#jam');
@@ -81,4 +85,10 @@ const btnPort = document.querySelector('#btn-port');
 const elmPort = document.querySelector('#element-port');
 btnPort.addEventListener('click', function(){
     elmPort.classList.toggle('hidden');
+});
+
+const btnPort2 = document.querySelector('#btn-port-2');
+const elmPort2 = document.querySelector('#element-port-2');
+btnPort2.addEventListener('click', function(){
+    elmPort2.classList.toggle('hidden');
 });

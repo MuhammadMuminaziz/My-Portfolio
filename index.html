@@ -7,7 +7,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
     <link rel="stylesheet" href="dist/css/style.css">
+    <link rel="stylesheet" href="src/output.css">
     <script>
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
           document.documentElement.classList.add('dark')
@@ -20,11 +23,12 @@
 <body onload="setInterval('displayTime()', 1000)">
 
     <!-- Navbar -->
-    <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10 transition duration-300">
-        <div class="w-full">
+    <header class="bg-transparent absolute top-0 left-0 w-full flex items-center z-10 transition duration-300" data-aos="fade-down">
+        <div class="container mx-auto">
             <div class="flex items-center justify-between relative">
-                <div class="px-4 lg:ml-5">
-                    <a href="#home" class="font-bold text-xl text-blue-700 dark:text-white block py-6 xl:text-2xl">Muhammad Mu'min Azis</a>
+                <div class="px-4 lg:ml-5 flex align-middle">
+                    <img src="./dist/img/mubtadev.png" alt="" class="" width="75px">
+                    <a href="#home" class="font-bold text-xl text-black dark:text-white block py-6 xl:text-2xl">MUTADEV</a>
                 </div>
                 <div class="flex items-center px-4 lg:mr-5">
                     <button id="hamburger" name="humberger" type="button" class="block absolute right-4 lg:hidden">
@@ -36,30 +40,30 @@
                     <nav id="nav-menu" class="hidden absolute py-5 bg-white shadow-lg rounded-lg max-w-[250px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none lg:rounded-none dark:bg-slate-900 dark:shadow-slate-600 lg:dark:bg-transparent">
                         <ul class="block lg:flex">
                             <li class="group">
-                                <a href="#home" class="text-base text-slate-700 shadow-slate-200 py-2 mx-3 xl:mx-4 flex group-hover:text-blue-700 dark:group-hover:text-white dark:text-slate-300">Beranda</a>
+                                <a href="#home" class="text-lg text-slate-900 shadow-slate-200 py-2 mx-3 xl:mx-4 flex group-hover:text-blue-700 dark:group-hover:text-white dark:text-slate-300">Beranda</a>
                             </li>
                             <li class="group">
-                                <a href="#about" class="text-base text-slate-700 shadow-slate-200 py-2 mx-3 xl:mx-4 flex group-hover:text-blue-700 dark:group-hover:text-white dark:text-slate-300">Tentang Saya</a>
+                                <a href="#about" class="text-lg text-slate-900 shadow-slate-200 py-2 mx-3 xl:mx-4 flex group-hover:text-blue-700 dark:group-hover:text-white dark:text-slate-300">Tentang Saya</a>
                             </li>
                             <li class="group">
-                                <a href="#portfolio" class="text-base text-slate-700 shadow-slate-200 py-2 mx-3 xl:mx-4 flex group-hover:text-blue-700 dark:group-hover:text-white dark:text-slate-300">Portfolio</a>
+                                <a href="#portfolio" class="text-lg text-slate-900 shadow-slate-200 py-2 mx-3 xl:mx-4 flex group-hover:text-blue-700 dark:group-hover:text-white dark:text-slate-300">Portfolio</a>
                             </li>
                             <li class="group">
-                                <a href="#client" class="text-base text-slate-700 shadow-slate-200 py-2 mx-3 xl:mx-4 flex group-hover:text-blue-700 dark:group-hover:text-white dark:text-slate-300">Clients</a>
+                                <a href="#client" class="text-lg text-slate-900 shadow-slate-200 py-2 mx-3 xl:mx-4 flex group-hover:text-blue-700 dark:group-hover:text-white dark:text-slate-300">Clients</a>
                             </li>
                             <li class="group">
-                                <a href="#contact" class="text-base text-slate-700 py-2 mx-3 xl:mx-4 flex group-hover:text-blue-700 dark:group-hover:text-white dark:text-slate-300">Contact</a>
+                                <a href="#contact" class="text-lg text-slate-900 py-2 mx-3 xl:mx-4 flex group-hover:text-blue-700 dark:group-hover:text-white dark:text-slate-300">Contact</a>
                             </li>
                             <li class="flex items-center pl-8 mt-3 lg:mt-0">
                                 <div class="flex">
-                                    <span class="mr-2 text-sm text-slate-500">Light</span>
+                                    <span class="mr-2 text-sm text-slate-400">Light</span>
                                     <input type="checkbox" class="hidden" id="dark-toggle">
                                     <label for="dark-toggle">
                                         <div class="flex h-5 w-9 cursor-pointer items-center rounded-full bg-slate-500 p-1">
                                             <div class="toggle-circle h-4 w-4 rounded-full bg-white transition duration-300 ease-in-out"></div>
                                         </div>
                                     </label>
-                                    <span class="ml-2 text-sm text-slate-500">Dark</span>
+                                    <span class="ml-2 text-sm text-slate-400">Dark</span>
                                 </div>
                             </li>
                         </ul>
@@ -74,54 +78,36 @@
     <section id="home" class=" pt-32 pb-24 bg-white dark:bg-gray-900 relative">
         <img src="dist/img/vector.png" alt="" class="absolute right-0 top-0">
         <div class="container mx-auto">
-            <div class="md:grid md:grid-cols-2 md:gap-2 md:grid-rows-1">
-                <div class="w-full px-4 mb-6 md:col-start-2 z-10">
+            <div class="md:grid md:gap-2 md:grid-rows-1" data-aos="fade-up">
+                <div class="w-full px-4 mb-6">
                     <div class="flex justify-center lg:mt-14">
-                        <div class="h-9 w-8 md:h-14 lg:h-20 lg:w-16 bg-white dark:bg-transparent md:w-12 rounded-lg shadow-md dark:shadow-slate-600 flex items-center justify-center"><h3 id="jam" class="text-lg text-slate-700 md:text-2xl lg:text-4xl dark:text-slate-400"></h3></div>
+                        <div style="width: 75px; height: 100px;" class="md:w-[100px] md:h-[125px] bg-white dark:bg-transparent rounded-lg shadow-md dark:shadow-slate-600 flex items-center justify-center"><h3 id="jam" style="font-size: 45px;" class="text-slate-700 md:text-2xl lg:text-4xl dark:text-slate-400"></h3></div>
                         <div class="flex items-center -m-1">
                             <img src="dist/img/Titik-dua.png" width="28" alt="">
                         </div>
-                        <div class="h-9 w-8 md:h-14 lg:h-20 lg:w-16 bg-white dark:bg-transparent md:w-12 rounded-lg shadow-md dark:shadow-slate-600 flex items-center justify-center"><h3 id="menit" class="text-lg text-slate-700 md:text-2xl lg:text-4xl dark:text-slate-400"></h3></div>
+                        <div style="width: 75px; height: 100px;" class="md:w-[100px] md:h-[125px] bg-white dark:bg-transparent rounded-lg shadow-md dark:shadow-slate-600 flex items-center justify-center"><h3 id="menit" style="font-size: 45px;" class="text-slate-700 md:text-2xl lg:text-4xl dark:text-slate-400"></h3></div>
                         <div class="flex items-center -m-1">
                             <img src="dist/img/Titik-dua.png" width="28" alt="">
                         </div>
-                        <div class="h-9 w-8 md:h-14 lg:h-20 lg:w-16 bg-white dark:bg-transparent md:w-12 rounded-lg shadow-md dark:shadow-slate-600 flex items-center justify-center"><h3 id="detik" class="text-lg text-slate-700 md:text-2xl lg:text-4xl dark:text-slate-400"></h3></div>
+                        <div style="width: 75px; height: 100px;" class="md:w-[100px] md:h-[125px] bg-white dark:bg-transparent rounded-lg shadow-md dark:shadow-slate-600 flex items-center justify-center"><h3 id="detik" style="font-size: 45px;" class="text-slate-700 md:text-2xl lg:text-4xl dark:text-slate-400"></h3></div>
                     </div>
-                </div>
-                <div class="w-full px-4 md:col-start-1 md:row-start-1">
-                    <h2 class="text-lg text-slate-700 font-semibold dark:text-slate-300">Hallo, Saya <a href="" class="block text-2xl font-bold mb-2 xl:text-3xl dark:from-sky-400 dark:to-blue-700 bg-gradient-to-r from-sky-400 to-blue-700 bg-clip-text text-transparent">Muhammad Mu'min Azis</a></h2>
-                    <h3 class="text-sm text-slate-700 lg:max-w-full max-w-xs mb-2 dark:text-slate-500">Mahasiswa <a href="" class="text-base text-slate-900 dark:text-slate-400 font-semibold xl:text-lg">Sekolah Tinggi Manajemen Informatika dan Teknologi IKMI CIREBON</a></h3>
-                    <a href="" class="py-1 px-5 bg-blue-800 rounded-full mt-3 inline-block text-white text-sm hover:bg-blue-600 focus:ring-1 focus:ring-blue-800 dark:bg-sky-500 dark:hover:bg-sky-700">Hubungi Saya</a>
                 </div>
             </div>
-            <div class="w-full px-4 lg:px-14 mt-12 lg:mt-0 lg:flex">
-                <div class="w-full lg:w-1/2 text-right lg:text-left lg:border-r-2 lg:border-slate-900 dark:lg:border-slate-400 lg:pl-4 lg:pr-8 flex flex-col justify-center">
-                    <h5 class="text-md text-slate-700 font-semibold dark:text-slate-300 md:mr-11">Moto</h5>
-                    <h3 class="text-lg font-semibold italic dark:text-white xl:text-xl">"Masa depan tergantung pada apa yang kamu lakukan hari ini."</h3>
-                    <p class="text-sm text-slate-500">- Mahatma Gandhi</p>
-                </div>
-                <div class="w-full lg:mt-0 lg:w-1/2 lg:pl-4">
+
+            <div class="w-full px-4 lg:px-14 mt-12 lg:mt-0 flex" style="align-items: center;">
+                <div class="w-full lg:mt-0 lg:w-1/2 lg:pl-4" data-aos="fade-right">
                     <div class="overflow-hidden rounded-lg flex justify-center">
-                        <img src="dist/img/muminaziz.png" alt="" width="250">
+                        <img src="dist/img/me.png" alt="" width="">
                     </div>
-                    <h5 class="text-center text-lg font-semibold mb-2 dark:text-slate-300 border-t-4 border-gray-900 dark:border-slate-700 rounded-xl md:w-1/2 mx-auto md: pt-4">Sosial Media</h5>
-                    <div class="flex flex-wrap justify-center">
-                        <a href="https://github.com/MuhammadMuminaziz" target="_blank" class="text-slate-600 mx-1 hover:scale-110 hover:text-slate-900 dark:hover:text-slate-100">
-                            <svg role="img" width="23" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>GitHub</title><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-                        </a>
-                        <a href="https://api.whatsapp.com/send?phone=681290200437" target="_blank" class="text-slate-600 mx-1 hover:scale-110 hover:text-slate-900 dark:hover:text-slate-100">
-                            <svg role="img" width="23" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>WhatsApp</title><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
-                        </a>
-                        <a href="https://instagram.com/m_aziz76?igshid=YmMyMTA2M2Y=" target="_blank" class="text-slate-600 mx-1 hover:scale-110 hover:text-slate-900 dark:hover:text-slate-100">
-                            <svg role="img" width="23" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Instagram</title><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.788.717 1.459 1.384 2.126.667.666 1.336 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.788-.306 1.459-.718 2.126-1.384.666-.667 1.079-1.335 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913-.306-.789-.718-1.459-1.384-2.126C21.319 1.347 20.651.935 19.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227-.224.562-.479.96-.899 1.382-.419.419-.824.679-1.38.896-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421-.569-.224-.96-.479-1.379-.899-.421-.419-.69-.824-.9-1.38-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678c-3.405 0-6.162 2.76-6.162 6.162 0 3.405 2.76 6.162 6.162 6.162 3.405 0 6.162-2.76 6.162-6.162 0-3.405-2.76-6.162-6.162-6.162zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405c0 .795-.646 1.44-1.44 1.44-.795 0-1.44-.646-1.44-1.44 0-.794.646-1.439 1.44-1.439.793-.001 1.44.645 1.44 1.439z"/></svg>
-                        </a>
-                        <a href="https://www.facebook.com/muhammad.m.aziz.5688" target="_blank" class="text-slate-600 mx-1 hover:scale-110 hover:text-slate-900 dark:hover:text-slate-100">
-                            <svg role="img" width="23" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Facebook</title><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                        </a>
-                        <a href="https://www.youtube.com/channel/UCOR2tpKmDLGCjtqNoQ89D_A" target="_blank" class="text-slate-600 mx-1 hover:scale-110 hover:text-slate-900 dark:hover:text-slate-100">
-                            <svg role="img" width="23" class="fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>YouTube</title><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-                        </a>
-                    </div>
+                    <h5 style="width: 100%;" class="text-center text-base font-semibold mb-2 dark:text-slate-300 border-t-4 border-gray-800 dark:border-slate-700 rounded-xl md:w-1/2 mx-auto md:pt-4"></h5>
+                </div>
+
+                <div class="w-full lg:mt-0 lg:w-1/2 lg:pl-4" data-aos="fade-left">
+                    <h2 class="text-base text-slate-700 font-semibold dark:text-slate-300">Hallo, Saya <a href=""
+                            class="block text-2xl xl:text-4xl font-bold dark:from-sky-400 dark:to-blue-700 bg-gradient-to-r from-sky-400 to-blue-700 bg-clip-text text-transparent">Muhammad
+                            Mu'min Azis</a></h2>
+                    <h3 class="text-lg font-semibold text-slate-900 lg:max-w-full max-w-xs mb-2 dark:text-slate-500">Web Developer</h3>
+                    <a href="https://api.whatsapp.com/send?phone=681290200437" target="_blank" style="padding: 5px 30px;" class="py-2 bg-blue-800 rounded-full mt-3 inline-block text-white text-base hover:bg-blue-600 focus:ring-1 focus:ring-blue-800 dark:bg-sky-500 dark:hover:bg-sky-700">Hubungi Saya</a>
                 </div>
             </div>
         </div>
@@ -129,61 +115,275 @@
     <!-- End Home -->
 
     <!-- About -->
-    <section id="about" class="py-24 bg-slate-200 dark:bg-slate-800">
+    <section id="about" class="py-24 bg-slate-200 dark:bg-slate-800" data-aos="fade-up">
         <div class="container mx-auto">
             <div class="w-full px-4 md:px-8 lg:px-12 xl:px-20">
-                <h3 class="text-xl text-slate-700 text-center font-bold mb-4 lg:text-2xl dark:text-slate-300">Tentang Saya</h3>
-                <p class="text-sm text-slate-600 md:text-base dark:text-slate-400"><span class="ml-6"></span>Hallo perkenalkan nama saya Muhammad Mu'min Azis lahir di Kota Cirebon tepatnya pada tanggal 10 Juli 2001. Sekarang saya sedang menempuh pendidikan di <a href="https://ikmi.ac.id/" class="text-blue-700 dark:text-sky-500 hover:underline" target="_blank">Sekolah Tinggi Management Informatika dan Komputer IKMI CIREBON</a> dengan jurusan Teknik Informatika, disana saya belajar banyak tentang teknologi hususnya di bidang Web Development. Saya berharap bisa belajar lebih banyak lagi dan bermanfaat dimanapun itu berada.</p>
+                <h3 class="text-2xl text-slate-700 text-center font-bold mb-4 lg:text-2xl dark:text-slate-300">Tentang Saya</h3>
+                <p class="text-base text-slate-600 md:text-xl dark:text-slate-400"><span class="ml-6"></span>Halo... Saya Muhammad Mu'min Azis mahasiswa dari STMIK IKMI CIREBON, disamping perkuliahan
+saya telah bekerja sebagai freelancer di bidang web development selama 1+ tahun. Ini memberi saya
+keahlian dalam mengembangkan situs web menggunakan bahasa seperti HTML, CSS, dan JavaScript.
+Sebagai freelancer, saya telah bekerja dengan berbagai klien dari berbagai industri, memahami
+kebutuhan mereka, dan memberikan solusi kreatif. Keahlian saya mencakup bagian depan (frontend)
+maupun bagian belakang (backend) web dan memungkinkan penggunaan kerangka kerja codeigniter
+maupun laravel. Dalam beberapa tahun ke depan, saya dapat terus mengasah keterampilan saya dan
+memanfaatkannya untuk berbagai proyek yang menantang.</p>
             </div>
         </div>
     </section>
     <!-- End About -->
 
     <!-- Portfolio -->
-    <section id="portfolio" class="py-24 bg-white dark:bg-gray-900">
+    <section id="portfolio" class="py-24 bg-white dark:bg-gray-900" data-aos="fade-up">
         <div class="container mx-auto px-4">
-            <h3 class="text-center text-lg font-bold text-slate-800 mb-4 md:text-xl lg:text-2xl dark:text-slate-300">Portfolio</h3>
-            <h5 class="text-base font-semibold text-center text-slate-700 lg:text-lg dark:text-slate-400">Project Terbaru</h5>
-            <p class="text-sm text-slate-700 text-center mb-4 lg:text-base dark:text-slate-400">Berikut adalah beberapa project yang telah saya selesaikan.</p>
-            <div class="flex justify-center">
-                <div class="w-80 shadow-md shadow-slate-700 rounded-lg overflow-hidden dark:bg-slate-900">
+            <h3 class="text-center mb-0 text-2xl font-bold text-slate-800 md:text-xl lg:text-2xl dark:text-slate-300">Portofolio</h3>
+            <p class="text-base text-slate-700 text-center mb-7 lg:text-base dark:text-slate-400">Berikut adalah beberapa project yang telah saya selesaikan.</p>
+            <div class="flex justify-center flex-wrap gap-4">
+
+                <div class="w-full md:w-1/2 xl:w-1/3 shadow shadow-slate-700 rounded-lg overflow-hidden dark:bg-slate-900" data-aos="fade-up">
                     <img src="dist/img/Screenshot (208).png" alt="">
-                    <h5 class="m-2 font-semibold dark:text-slate-200">Landing Page</h5>
-                    <div class="w-full p-2 text-sm hidden" id="element-port">
-                        <p class="inline-block text-slate-700 dark:text-slate-400">Link :</p>
-                        <a href="https://fahirajayaaspal.com/" class="text-blue-700 hover:underline dark:text-sky-400">https://fahirajayaaspal.com/</a>
-                        <p class="text-slate-900 font-semibold mt-3 dark:text-slate-300">Ini merupakan  first job saya di bidang freelanser, banyak rintangan yang mungkin baru saya rasakan mulai dari desain UI/UX sampai ke bagian backend. Tapi dari situ saya belajar Problemsolve yang baik dan membuat saya lebih kreatif lagi.</p>
-                        <h5 class="text-slate-900 font-semibold mt-2 dark:text-slate-400">Bulid witch :</h5>
-                        <ul class="list-disc ml-5">
-                            <li><a href="" class="text-blue-700 dark:text-sky-400">CodeIgniter v3</a></li>
-                            <li><a href="" class="text-blue-700 dark:text-sky-400">Bootstrap v5</a></li>
-                            <li><a href="" class="text-blue-700 dark:text-sky-400">LightBox</a></li>
-                            <li><a href="" class="text-blue-700 dark:text-sky-400">Maria DB</a></li>
-                            <li><a href="" class="text-blue-700 dark:text-sky-400">HTML</a></li>
-                            <li><a href="" class="text-blue-700 dark:text-sky-400">CSS</a></li>
+                    <h5 class="m-2 px-3 mt-5 text-lg font-semibold dark:text-slate-200 mb-3">Company Profile FJA</h5>
+                    <p class="mx-2 px-3 text-gray-500 mb-3">Fahira Jaya Aspal</p>
+                    <div class="w-full p-5 text-sm" id="element-port">
+                        <hr class="mb-3">
+                        <p class="inline-block text-slate-700 dark:text-slate-400">Link</p><br>
+                        <a href="https://fahirajayaaspal.com/"
+                            class="text-blue-700 hover:underline dark:text-sky-400">https://fahirajayaaspal.com/</a><br>
+                        <p class="inline-block text-slate-700 dark:text-slate-400">Link GitHub</p><br>
+                        <a href="https://github.com/MuhammadMuminaziz/my-portfolio"
+                            class="text-blue-700 hover:underline dark:text-sky-400">https://github.com/MuhammadMuminaziz/my-portfolio</a>
+
+                        <p class="text-slate-900 mt-3 dark:text-slate-300 mb-5">Ini merupakan  first job saya di bidang freelanser, banyak rintangan yang mungkin baru saya rasakan mulai dari desain UI/UX sampai ke bagian backend. Tapi dari situ saya belajar Problemsolve yang baik dan membuat saya lebih kreatif lagi.</p>
+                        <h5 class="text-slate-900 font-semibold mt-2 dark:text-slate-400">Teknologi :</h5>
+                        <ul class="list-disc ml-5 mb-5">
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">CodeIgniter v3</a></li>
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Bootstrap v5</a></li>
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">LightBox</a></li>
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Maria DB</a></li>
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">HTML</a></li>
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">CSS</a></li>
                         </ul>
                         <h5 class="text-slate-900 font-semibold mt-2 dark:text-slate-400">Fitur :</h5>
                         <p class="text-slate-900 dark:text-slate-300">Disini saya hanya menambahkan sistem login sederhana dan halaman admin untuk mengatur data-data pada web.</p>
                     </div>
-                    <p class="text-sm text-right mr-3 mb-2 text-blue-600 cursor-pointer dark:text-sky-400" id="btn-port">Lihat Detail</p>
                 </div>
+
+                <div class="w-full md:w-1/2 xl:w-1/3 shadow shadow-slate-700 rounded-lg overflow-hidden dark:bg-slate-900" data-aos="fade-up">
+                    <img src="dist/img/emon.png" alt="">
+                    <h5 class="m-2 px-3 mb-0 mt-5 text-lg font-semibold dark:text-slate-200">Emon dan Eva</h5>
+                    <p class="mx-2 px-3 text-gray-500 mb-3">Emonitoring dan Evaluasi</p>
+                    <div class="w-full p-5 text-sm" id="element-port-2">
+                        <hr class="mb-3">
+                        <p class="inline-block text-slate-700 dark:text-slate-400">Link Github</p><br>
+                        <a href="https://github.com/MuhammadMuminaziz/monev-tekkom"
+                            class="text-blue-700 hover:underline dark:text-sky-400">https://github.com/MuhammadMuminaziz/monev-tekkom</a>
+
+                        <p class="text-slate-900 mt-3 dark:text-slate-300 mb-5">Emon dan Eva merupakan aplikasi untuk memonitoring dan mengevaluasi data sekolah dan guru yang ada di provinsi Maluku yang telah melaksanakan UNBK.</h5>
+                        <h5 class="text-slate-900 font-semibold mt-2 dark:text-slate-400">Teknologi :</h5>
+                        <ul class="list-disc ml-5 mb-5">
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Laravel 8</a></li>
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Bootstrap v5</a></li>
+                        </ul>
+
+                        <h5 class="text-slate-900 font-semibold mt-2 dark:text-slate-400">Fitur :</h5>
+                        <ul class="list-disc ml-5 mb-5">
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Management data kecamatan dan kota</a></li>
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Management data sekolah</a></li>
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Management data guru</a></li>
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Management UNBK</a></li>
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Management data per periode</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-1/2 xl:w-1/3 shadow shadow-slate-700 rounded-lg overflow-hidden dark:bg-slate-900" data-aos="fade-up">
+                    <img src="dist/img/so_maluku.png" alt="">
+                    <h5 class="m-2 px-3 mb-0 mt-5 text-lg font-semibold dark:text-slate-200">SO Maluku</h5>
+                    <p class="mx-2 px-3 text-gray-500 mb-3">Smart Office Provinsi Maluku</p>
+                    <div class="w-full p-5 text-sm" id="element-port-2">
+                        <hr class="mb-3">
+                        <p class="inline-block text-slate-700 dark:text-slate-400">Link Github</p><br>
+                        <a href="https://github.com/MuhammadMuminaziz/so_maluku"
+                            class="text-blue-700 hover:underline dark:text-sky-400">https://github.com/MuhammadMuminaziz/so_maluku</a>
+
+                        <p class="text-slate-900 mt-3 dark:text-slate-300 mb-5">SO Maluku merupakan aplikasi office maluku yang bertujuan untuk memudahkan perizinan maupun surat pernyataan. Dan disini saya hanya memperbaiki beberapa bug dan menambahkan beberapa fitur lainya.</h5>
+                        <h5 class="text-slate-900 font-semibold mt-2 dark:text-slate-400">Teknologi :</h5>
+                        <ul class="list-disc ml-5 mb-5">
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Codeigniter 4</a></li>
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Bootstrap v4</a></li>
+                        </ul>
+
+                        <h5 class="text-slate-900 font-semibold mt-2 dark:text-slate-400">Fitur :</h5>
+                        <ul class="list-disc ml-5 mb-5">
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Management data Jabatan Kecamatan sampai Provinsi</a></li>
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Management data Perizinan</a></li>
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Management data User</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-1/2 xl:w-1/3 shadow shadow-slate-700 rounded-lg overflow-hidden dark:bg-slate-900" data-aos="fade-up">
+                    <img src="dist/img/gamesaku.png" alt="">
+                    <h5 class="m-2 px-3 mb-0 mt-5 text-lg font-semibold dark:text-slate-200">Gemesaku</h5>
+                    <p class="mx-2 px-3 text-gray-500 mb-3">Gemar membaca satu minggu satu kali</p>
+                    <div class="w-full p-5 text-sm" id="element-port-2">
+                        <hr class="mb-3">
+                        <p class="inline-block text-slate-700 dark:text-slate-400">Link Github</p><br>
+                        <a href="https://github.com/MuhammadMuminaziz/gemesaku-app"
+                            class="text-blue-700 hover:underline dark:text-sky-400">https://github.com/MuhammadMuminaziz/gemesaku-app</a>
+
+                        <p class="text-slate-900 mt-3 dark:text-slate-300 mb-5">Gemesaku merupakan aplikasi program pemerintah Kabupaten Cirebon untuk meningkatkan kualitas budaya membaca di cirebon.</h5>
+                        <h5 class="text-slate-900 font-semibold mt-2 dark:text-slate-400">Teknologi :</h5>
+                        <ul class="list-disc ml-5 mb-5">
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Laravel 9</a></li>
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Bootstrap v5</a></li>
+                        </ul>
+
+                        <h5 class="text-slate-900 font-semibold mt-2 dark:text-slate-400">Fitur :</h5>
+                        <ul class="list-disc ml-5 mb-5">
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Management User</a></li>
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Management Buku</a></li>
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Management Progres Membaca</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-1/2 xl:w-1/3 shadow shadow-slate-700 rounded-lg overflow-hidden dark:bg-slate-900" data-aos="fade-up">
+                    <img src="dist/img/pitang.png" alt="">
+                    <h5 class="m-2 px-3 mb-0 mt-5 text-lg font-semibold dark:text-slate-200">Piutang App</h5>
+                    <div class="w-full p-5 text-sm" id="element-port-2">
+                        <hr class="mb-3">
+                        <p class="inline-block text-slate-700 dark:text-slate-400">Link Github</p><br>
+                        <a href="https://github.com/MuhammadMuminaziz/piutang-app"
+                            class="text-blue-700 hover:underline dark:text-sky-400">https://github.com/MuhammadMuminaziz/piutang-app</a>
+
+                        <p class="text-slate-900 mt-3 dark:text-slate-300 mb-5">Piutang App merupakan sebuat aplikasi inventory sekaligus pencatatan piutang.</h5>
+                        <h5 class="text-slate-900 font-semibold mt-2 dark:text-slate-400">Teknologi :</h5>
+                        <ul class="list-disc ml-5 mb-5">
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Laravel 10</a></li>
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Filament v2</a></li>
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Tailwind</a></li>
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">AlpineJS</a></li>
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Livewire</a></li>
+                        </ul>
+
+                        <h5 class="text-slate-900 font-semibold mt-2 dark:text-slate-400">Fitur :</h5>
+                        <ul class="list-disc ml-5 mb-5">
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Management User</a></li>
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Management Barang Masuk dan Barang Keluar</a></li>
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Management Piutang dan Pelaporan Piutang</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-1/2 xl:w-1/3 shadow shadow-slate-700 rounded-lg overflow-hidden dark:bg-slate-900" data-aos="fade-up">
+                    <img src="dist/img/mts.png" alt="">
+                    <h5 class="m-2 px-3 mb-0 mt-5 text-lg font-semibold dark:text-slate-200">Company Profile MTS</h5>
+                    <p class="mx-2 px-3 text-gray-500 mb-3">Mandiri Technology Sejahtera</p>
+                    <div class="w-full p-5 text-sm" id="element-port-2">
+                        <hr class="mb-3">
+                        <p class="inline-block text-slate-700 dark:text-slate-400">Link</p><br>
+                        <a href="http://www.mandiri-technology-sejahtera.com/"
+                            class="text-blue-700 hover:underline dark:text-sky-400">http://www.mandiri-technology-sejahtera.com/</a><br>
+                        <p class="inline-block text-slate-700 dark:text-slate-400">Link Github</p><br>
+                        <a href=""
+                            class="text-blue-700 hover:underline dark:text-sky-400 italic">Tidak Tersedia</a>
+
+                        <p class="text-slate-900 mt-3 dark:text-slate-300 mb-5">Aplikasi ini berisi profile dari CV. Mandiri Technology Sejahtera guna meningkatkan kualitas layanan dan product mereka.</h5>
+                        <h5 class="text-slate-900 font-semibold mt-2 dark:text-slate-400">Teknologi :</h5>
+                        <ul class="list-disc ml-5 mb-5">
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Laravel 10</a></li>
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Filament v2</a></li>
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Tailwind</a></li>
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">AlpineJS</a></li>
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Livewire</a></li>
+                        </ul>
+
+                        <h5 class="text-slate-900 font-semibold mt-2 dark:text-slate-400">Fitur :</h5>
+                        <ul class="list-disc ml-5 mb-5">
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Management User</a></li>
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Management Product</a></li>
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Fitur Tambahan Lainya (Category, Brand, dll)</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="w-full md:w-1/2 xl:w-1/3 shadow shadow-slate-700 rounded-lg overflow-hidden dark:bg-slate-900" data-aos="fade-up">
+                    <img src="dist/img/payroll.png" alt="">
+                    <h5 class="m-2 px-3 mb-0 mt-5 text-lg font-semibold dark:text-slate-200">Payroll App</h5>
+                    <p class="mx-2 px-3 text-gray-500 mb-3">Aplikasi Penggajian</p>
+                    <div class="w-full p-5 text-sm" id="element-port-2">
+                        <hr class="mb-3">
+                        <p class="inline-block text-slate-700 dark:text-slate-400">Link GitLab</p><br>
+                        <a href="https://gitlab.com/azzamydev/arjuna-payroll"
+                            class="text-blue-700 hover:underline dark:text-sky-400">https://gitlab.com/azzamydev/arjuna-payroll</a>
+
+                        <p class="text-slate-900 mt-3 dark:text-slate-300 mb-5">Payroll App merupakan aplikasi penggajian, presensi dan pembuatan jadwal kerja karyawan dari PT. Arjuna Petrogas Indonesia.</h5>
+                        <h5 class="text-slate-900 font-semibold mt-2 dark:text-slate-400">Teknologi :</h5>
+                        <ul class="list-disc ml-5 mb-5">
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Laravel 10</a></li>
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Filament v3</a></li>
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Tailwind</a></li>
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">AlpineJS</a></li>
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Livewire</a></li>
+                        </ul>
+
+                        <h5 class="text-slate-900 font-semibold mt-2 dark:text-slate-400">Fitur :</h5>
+                        <ul class="list-disc ml-5 mb-5">
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Generate Schedule Pertahun</a></li>
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Presensi Karyawan</a></li>
+                            <li><a href="" class="text-slate-900 dark:text-sky-400">Penggajian Karyawan</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+
             </div>
+            <p class="text-sm text-gray-500 text-center mt-5 px-3">Ada beberapa aplikasi yang tidak bisa ditampilkan karena ada beberapa hal seperti tingkat keprivasian dan lainya.</p>
         </div>
     </section>
     <!-- End Portfolio -->
 
     <!-- Client -->
-    <section id="client" class="py-24 bg-white dark:bg-gray-900">
+    <section id="client" class="py-24 bg-white dark:bg-gray-900" data-aos="fade-up">
         <div class="container mx-auto">
             <div class="w-full px-4">
-                <h3 class="text-center text-slate-800 text-lg font-semibold md:text-xl lg:text-2xl dark:text-slate-300">Clients</h3>
-                <p class="text-slate-700 dark:text-slate-400 text-center text-base lg:text-lg font-semibold italic">"Dapatkan pengalaman terbaikmu bersama kami."</p>
-                <div class="flex justify-center mt-8">
-                    <div>
-                        <div class="w-32 rounded-full shadow-md shadow-slate-700 border-2 border-slate-500 overflow-hidden">
+                <h3 class="text-center text-slate-800 text-2xl font-semibold md:text-xl lg:text-2xl dark:text-slate-300">Clients</h3>
+                <p class="text-base text-slate-700 text-center mb-7 lg:text-base dark:text-slate-400 italic">"Dapatkan pengalaman terbaikmu bersama kami."</p>
+                <div class="flex md:justify-center mt-8 gap-5 overflow-x-auto whitespace-nowrap">
+
+                    <div class="flex flex-col justify-center" style="align-items: center;" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-20 rounded-full shadow shadow-slate-700 border-2 border-slate-500 overflow-hidden">
                             <img src="dist/img/client/client.jpeg" alt="">
                         </div>
-                        <h5 class="text-center text-slate-700 dark:text-slate-400 mt-2">Ahmad Wahyudi</h5>
+                        <h5 class="text-center text-sm text-slate-700 dark:text-slate-400 mt-3">Ahmad Wahyudi</h5>
+                    </div>
+
+                    <div class="flex flex-col justify-center" style="align-items: center;" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-20 rounded-full shadow shadow-slate-700 border-2 p-2 border-slate-500 overflow-hidden">
+                            <img src="dist/img/client/diskominfo.png" alt="">
+                        </div>
+                        <h5 class="text-center text-sm text-slate-700 dark:text-slate-400 mt-3">Diskominfo Kab Cirebon</h5>
+                    </div>
+
+                    <div class="flex flex-col justify-center" style="align-items: center;" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-20 rounded-full shadow shadow-slate-700 border-2 p-3 border-slate-500 overflow-hidden">
+                            <img src="dist/img/client/maluku.png" alt="">
+                        </div>
+                        <h5 class="text-center text-sm text-slate-700 dark:text-slate-400 mt-3">Provinsi Maluku</h5>
+                    </div>
+
+                    <div class="flex flex-col justify-center" style="align-items: center;" data-aos="fade-up" data-aos-delay="400">
+                        <div class="w-20 rounded-full shadow shadow-slate-700 border-2 p-3 border-slate-500 overflow-hidden">
+                            <img src="dist/img/client/user.png" alt="">
+                        </div>
+                        <h5 class="text-center text-sm text-slate-700 dark:text-slate-400 mt-3">Azzamydev</h5>
+                    </div>
+
+                    <div class="flex flex-col justify-center" style="align-items: center;" data-aos="fade-up" data-aos-delay="500">
+                        <div class="w-20 rounded-full shadow shadow-slate-700 border-2 p-3 border-slate-500 overflow-hidden">
+                            <img src="dist/img/client/user.png" alt="">
+                        </div>
+                        <h5 class="text-center text-sm text-slate-700 dark:text-slate-400 mt-3">Ryan AP</h5>
                     </div>
                 </div>
             </div>
@@ -192,28 +392,28 @@
     <!-- End Client -->
 
     <!-- Contact -->
-    <section id="contact" class="py-24 bg-slate-200 dark:bg-slate-800">
+    <section id="contact" class="py-24 bg-slate-200 dark:bg-slate-800" data-aos="fade-up">
         <div class="container mx-auto">
-            <h3 class="text-center text-lg text-slate-800 font-semibold md:text-xl xl:text-2xl dark:text-slate-300">Contact</h3>
+            <h3 class="text-center text-2xl text-slate-800 font-semibold md:text-xl xl:text-2xl dark:text-slate-300">Contact</h3>
             <div class="w-full px-4 md:max-w-3xl mx-auto">
                 <h5 class="text-center text-base text-slate-600 font-semibold mb-7 lg:text-lg dark:text-slate-400">Hubungi Kami</h5>
                 <form action="">
                     <div class="w-full px-4 mb-6">
                         <label for="nama" class="mb-1 text-slate-700 after:content-['*'] after:text-pink-500 after:ml-0.5 block dark:text-slate-400">Nama</label>
-                        <input type="text" id="nama" class="px-3 py-2 border shadow rounded w-full block text-sm placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-sky-500">
+                        <input type="text" id="nama" class="px-3 py-2 border shadow rounded-lg w-full block text-sm placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-sky-500">
                     </div>
                     <div class="w-full px-4 mb-0">
                         <label for="email" class="mb-1 text-slate-700 after:content-['*'] after:text-pink-500 after:ml-0.5 block dark:text-slate-400">Email</label>
-                        <input type="email" id="email" placeholder="masukan email.." class="px-3 py-2 border shadow rounded w-full block text-sm placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-sky-500 invalid:text-pink-600 invalid:focus:ring-pink-600 peer">
+                        <input type="email" id="email" placeholder="masukan email.." class="px-3 py-2 border shadow rounded-lg w-full block text-sm placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-sky-500 invalid:text-pink-600 invalid:focus:ring-pink-600 peer">
                         <p class="text-sm m-1 text-pink-700 dark:text-pink-600 invisible peer-invalid:visible">email tidak valid</p>
                     </div>
                     <div class="w-full px-4 mb-6">
                         <label for="pesan" class="mb-1 text-slate-700 after:content-['*'] after:text-pink-500 after:ml-0.5 block dark:text-slate-400">Pesan</label>
-                        <textarea type="email" id="email" placeholder="Tulis pesan.." class="px-3 py-2 border shadow rounded w-full block text-sm placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-sky-500"></textarea>
+                        <textarea type="email" id="email" placeholder="Tulis pesan.." class="px-3 py-2 border shadow rounded-lg w-full block text-sm placeholder:text-slate-400 focus:outline-none focus:ring-1 focus:ring-sky-500"></textarea>
                     </div>
-                    <div class="flex px-4 justify-end gap-1">
-                        <button type="submit" name="submit" class="py-[2px] px-3 bg-blue-800 shadow rounded-md text-white text-sm md:text-md hover:bg-blue-600">Kirim</button>
-                        <button type="reset" class="py-[2px] px-3 bg-pink-700 shadow rounded-md text-white text-sm hover:bg-pink-600 md:text-md">Reset</button>
+                    <div class="flex px-4 justify-end gap-2">
+                        <button type="submit" name="submit" class="px-5 py-2 bg-blue-800 shadow rounded-md text-white text-sm md:text-md hover:bg-blue-600">Kirim</button>
+                        <button type="reset" class="px-5 py-2 bg-pink-700 shadow rounded-md text-white text-sm hover:bg-pink-600 md:text-md">Reset</button>
                     </div>
                 </form>
             </div>
@@ -222,7 +422,7 @@
     <!-- End Contact -->
 
     <!-- Footer -->
-    <footer class="pt-10 bg-slate-900">
+    <footer class="pt-10 bg-slate-900" data-aos="fade-up">
         <div class="container mx-auto pb-10">
             <div class="flex px-4 flex-wrap justify-center gap-6 md:gap-10 lg:gap-20">
                 <div class="w-36 md:w-40 lg:w-48 xl:w-52">
@@ -283,6 +483,7 @@
     </a>
     <!-- end back to top -->
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="dist/js/script1.js"></script>
 </body>
 </html>
